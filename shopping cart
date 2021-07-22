@@ -1,0 +1,29 @@
+import os
+print ('''Options for shopping cart: 
+  1. Add product
+  2. Delete product
+  3. Cart view
+  4. Change the product
+  0.Exit the program''')
+
+cos={}
+optiune=int(input('Choose the option: '))
+while optiune!=0:
+  if optiune == 1:
+    produs=input('Add product')
+    cantitate=int(input('Add the quantity'))
+    cos[produs]=cantitate
+  
+  elif optiune == 2:
+    produs=input('
+What product do you want to delete?: ')
+    del cos[produs]
+    
+  elif optiune == 3:
+    for produs in cos:
+      print (produs +' '+str(cos[produs]))
+  optiune=int(input('Choose the option: '))
+  
+  if optiune == 0:
+    quit()
+    os.system('cls')
